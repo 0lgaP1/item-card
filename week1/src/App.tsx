@@ -1,8 +1,10 @@
 import './App.css';
-import styled, {css} from 'styled-components';
-import {myTheme} from "./components/Theme.styles";
-import {GlobalStyles} from "./components/GlobalStyles";
+import styled from 'styled-components';
 import imgTest from '../src/images/Rectangle.png';
+import React from "react";
+import {Title} from "./components/Title";
+import {SubTitle} from "./components/SubTitle";
+import {StyledBtn} from "./components/StyledBtn";
 
 
 const BoxCard = styled.div`
@@ -14,44 +16,10 @@ const BoxCard = styled.div`
     margin: 20px;
     padding: 20px;
     
-
     button {
         cursor: pointer;
     }
 `
-
-type StyledBtnPropsType = {
-    color?: string;
-    background?: string;
-    btnType?: "selected" | "notSelected";
-}
-
-const StyledBtn = styled.button<StyledBtnPropsType>`
-    background-color: transparent;
-    color: #4E71FE;
-    border: 2px solid #4E71FE;
-    border-radius: 5px;
-    width: 86px;
-    height: 30px;
-    margin: 10px;
-    box-shadow: none;
-    font-size: 12px; 
-    
-    &:hover {
-        background-color: #4E71FE;
-        color: #FFFFFF;
-    }
-`;
-
-const Title = styled.h1`
-    font-weight: bold;
-    color: #000000;
-`;
-
-const SubTitle = styled.p`
-    color: #ABB3BA;
-`;
-
 function App() {
     return (
         <div className="App">
@@ -59,17 +27,22 @@ function App() {
                 <div style={{
                     display: 'flex',
                     justifyContent: 'center',
+                    maxHeight: "100%",
+                    maxWidth: "100%",
                     height: "auto",
-                    width: "280px",
-                    margin: "0 5px"
+                    margin: "10px"
                 }}>
-                    <img src={imgTest} alt="Main image"/>
+                    <img src={imgTest} alt="Main image" style={{
+                        margin: "0 5px",
+                        height: "170px",
+                        width: "280px",
+                    }}/>
                 </div>
                 <Title>Headline</Title>
                 <SubTitle>Faucibus. Faucibus. Sit sit sapien sit tempusrisu ut.
                     Sit molestie ornare in venen.</SubTitle>
-                <StyledBtn btnType={"selected"}>See more</StyledBtn>
-                <StyledBtn btnType={"notSelected"}>Save</StyledBtn>
+                <StyledBtn>See more</StyledBtn>
+                <StyledBtn>Save</StyledBtn>
             </BoxCard>
         </div>
     );
