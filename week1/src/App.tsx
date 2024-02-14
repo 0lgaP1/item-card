@@ -1,15 +1,13 @@
 import './App.css';
 import styled from 'styled-components';
-import imgTest from '../src/images/Rectangle.png';
+import imgRectangle from '../src/images/Rectangle.png';
+import imgWilliam from '../src/images/Shakespeare.png'
 import React from "react";
-import {Title} from "./components/Title";
-import {SubTitle} from "./components/SubTitle";
-import {StyledBtn} from "./components/StyledBtn";
+import {Card} from "./components/Card";
 
 
-const BoxCard = styled.div`
+export const BoxCard = styled.div`
     max-width: 300px;
-    width: 100%;
     height: 100%;
     border: double black;
     border-radius: 5px;
@@ -20,32 +18,30 @@ const BoxCard = styled.div`
         cursor: pointer;
     }
 `
+const cardData = {
+    myImage : imgRectangle,
+    titleText : 'Headline' ,
+    subtitleText : 'Faucibus. Sit sit sapien sit tempusrisu ut. Sit molestie ornare in venen.'
+}
+const cardsData = [
+    {
+        myImage : imgWilliam,
+        titleText : 'Title' ,
+        subtitleText : 'Some description'
+    },{
+        myImage : imgRectangle,
+        titleText : 'Title' ,
+        subtitleText : 'Some description'
+    },
+]
 function App() {
     return (
-        <div className="App">
-            <BoxCard>
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    maxHeight: "100%",
-                    maxWidth: "100%",
-                    height: "auto",
-                    margin: "10px"
-                }}>
-                    <img src={imgTest} alt="Main image" style={{
-                        margin: "0 5px",
-                        height: "170px",
-                        width: "280px",
-                    }}/>
-                </div>
-                <Title>Headline</Title>
-                <SubTitle>Faucibus. Faucibus. Sit sit sapien sit tempusrisu ut.
-                    Sit molestie ornare in venen.</SubTitle>
-                <StyledBtn>See more</StyledBtn>
-                <StyledBtn>Save</StyledBtn>
-            </BoxCard>
-        </div>
-    );
+        <>
+            <Card {...cardData} />
+            <Card myImage={imgWilliam} titleText={'To be or not to be'} subtitleText={'That is a question'} />{/*buttonText='Button TExt'*/}
+        </>
+
+            );
 }
 
 export default App;
