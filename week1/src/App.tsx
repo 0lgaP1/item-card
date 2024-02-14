@@ -2,6 +2,7 @@ import './App.css';
 import styled from 'styled-components';
 import imgRectangle from '../src/images/Rectangle.png';
 import imgWilliam from '../src/images/Shakespeare.png'
+import imgNature from '../src/images/Nature.jpg'
 import React from "react";
 import {Card} from "./components/Card";
 
@@ -32,15 +33,20 @@ const cardsData = [
         myImage : imgRectangle,
         titleText : 'Title' ,
         subtitleText : 'Some description'
+    },{
+        myImage : imgNature,
+        titleText : 'Title' ,
+        subtitleText : 'Some description'
     },
 ]
 function App() {
     return (
         <>
             <Card {...cardData} />
+            <Card myImage={imgRectangle} titleText={'Headliner'} subtitleText={'Something more to read Something more to read'} />
+            <Card myImage={imgNature} titleText={'A walk in nature walks the soul back home'} subtitleText={'Something more to read Something more to read Something more to readSomething more to read Something more to readSomething more to read Something more to readSomething more to read Something more to readSomething more to read Something more to readSomething more to read Something more to read Something more to read'} />
             <Card myImage={imgWilliam} titleText={'To be or not to be'} subtitleText={'That is a question'} />{/*buttonText='Button TExt'*/}
         </>
-
             );
 }
 
