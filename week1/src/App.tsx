@@ -8,8 +8,8 @@ import {Card} from "./components/Card";
 
 
 export const BoxCard = styled.div`
-    max-width: 300px;
-    height: 100%;
+    width: 300px;
+    height: auto;
     border: double black;
     border-radius: 5px;
     margin: 20px;
